@@ -1,0 +1,33 @@
+/etc/passwd
+/etc/ -> konfigürasyon dosyalarına bakılır.
+/etc/cronjob
+	ps aux : anlık sistemde çalışan süreçleri gösterir
+	netstat -antp | grep LISTEN
+	en son değiştirilen dosyalara bakabiliriz -> find
+	history -> .bash_history : her kullanıcının altında o sessionda çalıştırılan komutları depolar
+	SUID -> find (ping)
+	home/
+	ssh localhost
+	sudo -l (parola gerektirmeden sudo ile çalıştırılabilecek programları gösterir)
+	/etc/hosts
+	kernel exploitation -> her zaman stabil olmayabiliyor. Olabildiğince sona bırak.
+		exploit -> CVE kodu atanır ve bu kodla zafiyet aranır(uniq) 
+		sistemin çekirdek sürümünü öğren --> uname -a
+		lsb_release -a
+		cat /etc/issue
+		cat /proc/version
+	Enviroments
+	
+	
+	nmap -p- -sV 192.168.43.138
+	directory fuzzing yapılır
+	dirb http://192.168.43.138:8008/
+	tarayıcıya 
+	192.168.43.128:8008/blog/index.php/
+	dotfiles
+		commitlerin içine bakılır
+		zsh/aliases.zsh
+			lastdump=https.....
+			
+	
+	

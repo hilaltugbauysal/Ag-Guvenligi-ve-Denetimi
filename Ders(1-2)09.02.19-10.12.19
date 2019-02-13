@@ -1,0 +1,262 @@
+09.02.2019 CMT
+
+İlk Görüşme, Kapsam : Test yapılacak kurum ile danışmanlık verilecek kurum arasında yapılır ve test edilecek konuların sınırı bilgileri konuşulur.
+    NDA : Gizlilik sözleşmesi, şirketin mahremi olduğu için bilgiler 3. şahısa sızdırılamaz.
+Saldırgan vs Güvenlik Danışmanı
+    1. Para
+    2. Motivasyon (Ego, Siyasal/politik, İtibar zedeleme, Ticari Espiyonaj, Nefret, Hactivizm)
+    3. Kapsam (sınırlar, zaman, ağ bilgisi vb.)
+Rapor : ne işlem yapılırsa yapılsın sonunda elde edilen bir pdf dosyası olmalı.
+
+Yaklaşımlar
+    Blackbox : Eldeki tek bilgi şirketin adı.
+    Whitebow : Şirket tüm bilgileri vermiyor, uygulamaların kaynak kod analizi yapılır.
+    Greybox : Şirket ip adresleri ve test edilmesi istenen uygulamaları, farklı yetki seviyelerine sahip kullanıcılar verilir.
+    
+Kavramlar
+    Zafiyet : Uygulamanın normal davranışının dışına çıkarak başka şekilde çalışmasına sebep olabilecek her türlü olay. Bu zafiyet kullanıldığı zaman Exploit oluyor
+    Tehdit : Bu zafiyetin tetiklediği olması istenmeyen durum
+    Risk : Tehditin gerçekleşmesi sonucunda kurumun uğrayacağı zarar
+    Exploit : Bu olayı hayata geçirip hedef sisteme yol açılması
+    Payload : Giriş noktasını sömürdükten sonra yapılan işlemler
+    
+Rengarenk Ekipler
+    Red Team : Sızma testlerinin yanında fiziksel saldırıyı da canlandırmak söz konusu
+    Blue Team : Savunma odaklı güvenlik cihaz ve ürünlerinden sorumlu
+    Purple Team : Red + Blue Team
+    Siyah Şapka : Kötü niyetli hacker davranışı
+    Beyaz Şapka : İyi niyetli bir hacker davranışı, exploit edilen yerde mahrem bilgilere erişmeyip ilgililere bildirmek.
+    
+Vulnerability/Security Assesment : Otomatize araçlar kullanılarak kurumun zafiyetlerini ortaya koyan rapor fakat çok güvenilir değil.
+Penetration Test : Sisteme sızıp gelinebilecek en yüksek yetki seviyesine gelmeye çalışmak.
+Security Auditing : Şirkette ISO27001 tarzında endüstri standartlarını uygulanıp uygulanmadığını kontrol etmek.
+Ethical Hacking : Hacking işlemlerini etik doğrultularda yapmak.
+    Hacker : Bir sistem üzeirinde o sistemi değiştirebilecek kadar yeterli bilgiye sahip olan kimse.
+        USER - GNU - KERNEL
+        
+Test Tipleri
+    Network / Segmentation Test / Cloud Pentest
+    Internal/External Test : Kurumiçi / Kurumdışı kişiler tarafından gelebilecek zararlara karşı yapılan test.
+    Application Test :
+    Scada Pentest : İnternetle bağı olmak zorunda olmadan sisteme erişmek.
+    Wireless Pentest : Sinyallerin, frekansların düzgün çalışıp çalışılmadığına dair testler.
+    Social Engineering : Kurum çalışanlarının bilgi güvenliği konusunda ne kadar bilinçli olduğuna dair yapılan testler.
+        orijinaline benzeyen sahte domainler ile çalışanlara mail göndermek, usb sokmak vs.
+    Load/Stress Test : Tahmin edilen beklenen load'ı test etmek.
+    
+    
+Metodoloji : Süreci gerçekleştirirken ki sıra, yöntem. Sızma testleri ekip işi olduğu için metodoloji çok daha önemlidir.
+    Bilgi Toplama : Aktif ya da    pasif şekilde ip domain uygulama çalışan e-mail fiziksel adres bilgilerini elde etmek
+    Zafiyet Tespiti
+        Otomatize --> Nessus, Core Impact, OpenVAS
+        Manuel --> Burp Suite, OWASP ZAP Proxy
+    Zafiyet Sömürüsü
+        Hazır Sömürü Kodu Kullanımı --> exploit-db.com
+        Vulnerability Research : Zero-day çıkarma çalışmaları
+        Yetki Yükseltme Saldırıları : Root yetkisine sahip olunca sistemde her şeye sahip olabiliyorsun
+        
+Bağlantıyı Kalıcı Yapma ve Risk Tespiti
+
+İz Tespiti ve İzleri Silme : Loglarn(kullanıcı oluştuma, silme, saldırı logları) : izleri silme olayı şart değil istenirse yapılır.
+
+Raporlama : Yapılan tüm işlemleri bir .docx belgesi üzerinde tek tek ayrıntılı ve anlaşılır olarak açıklamak.
+    Hikaye
+        Executive Summary : Yönetici özeti, teknik olmayan bir kimsenin anlayacağı düzeyde yazılır.
+        Introduction : Test öncesindeki toplantıdaki kapsam bilgisi alınan şirket bilgileri dökümü.
+        Methodology :
+        Findings : Bulunan zafiyetler, teknik dilde yazılabilir.
+            Severity : Risk seviyesi
+            Açıklama : Zafiyetin ne olduğunu genel hatlarıyla anlatmak.
+            Etki : Bulunan zafiyetin kuruma etkisi tartışılır.
+            Teknik Detay : Olayı simüle etmek.
+            Önlem : Danışmanlık tavsiyeleri
+            Referans : Bulunan zafiyetlerin genel geçer olduğunun ispatına dair güvenilir kaynak adresleri, dökümanlar.
+        Conclusion : Risk seviyesi, genel tavsiyeler.
+        Appendix : Port taraması gerçekleştirildiyse bunların açık olduğu her port http taramaları özetlenir.
+Raporlar parola atanmış zip dosyası olarak teslim edilir ve parola sms olarak bildirilir.
+Raporlar bir süre sonra kalıcı olarak silinir.
+
+OSI
+
+İnternet standartı, pratikte uygulanmışlığı yok teoride.
+	1. 
+Application
+
+
+                    HTTP, SMTP
+        6. Presentation
+                    TLS, SSL
+        5. Session
+                    VPN
+        4. Transportation
+                    TCP, 3Way Handshake
+                            SYN -->
+                                        <-- SYN + ACK
+                            ACK -->
+                    UDP
+        3. Network
+                Addressing
+                https://tools.ietf.org/html/rfc1918
+                IP - 32 bit 
+                        Subnet
+                        NAT
+                                Private
+                                Public
+                        Loopback : Sistemin kendi ile haberleşmesi için tanımlanmış IP adresidir
+                        Apipa : IP alamayan istemcilerin 169. lu IP ile kendi arasında haberleşip başka hiçbir yerle haberleşemeyen blokları
+        2. Data Link
+                MAC - 48 bit
+                ARP : IP adreslerini MAC adreslerine çözümler.
+                RARP : MAC adreslerini IP adreslerine çözümler.
+        1. Physical
+
+
+Bilgi Toplama
+
+Seviye 1:    PTES :
+Seviye 2:    RED :
+Seviye 3:    MIL :
+Aktif keşif : Doğrudan hedefe sorulur alınmak istenen bilgiler
+Pasif Keşif : Hedef ile doğrudan ilişkiye geçilmez hedefi bilgi toplamak için herkese açık servisler (sayfalar, sosyal medya hesapları) üzerinden bilgi toplanır.
+    OSINT
+        Domain bulunur, domainin bulunduğu sunucunun ip adresi, şirketin ip blokları...
+        Kurum çalışanları hakkında bilgi toplanır.
+        Service Enumeration 
+        Leak edilmiş veriler (pass, mail, user, vs.)
+        Unutulmuş uygulamalar, altdizinler 
+        Subdomainler
+		
+		fas.org/irp/doddir/army/atp2-22-9.pdf
+		Whois Kaydı
+		IP aralığı
+		Subdomainler
+		Virtualhost
+		Arama Motorları --> Google, Bing, ... (parametreleri ile aranır)
+		Unutulmuş Dizin ve Dosyalar
+		Metadata (Kuruma ait dış dünyaya yayımlanmış veriler üzerinde metadata analizi yapmak)
+		Çalışanlar (IT birimi üzerinde çalışan kişileri araştırdıktan sonra yeterlilikleri neler hakkında ilgilendikleri ve nerelerde eksik olabilecekleri hakkında bir bilgi toplanabilir.)
+		Sızdırılmış Veriler (yazılım geliştirici insanların GitHub gibi ortamlar üzerinde unutmuş olduğu dosyalar)
+		Geliştiriciler
+		Wildlife
+-------------------------------------------------------------------		
+
+Whois Kaydı
+	Alan adı ya da isim sunucularına ait IP adresi bilgisi
+	Alan adı kimin üzerine kayıtlı
+	Fiziksel Adresi
+	İletişim Numaraları
+	Başlangıç bitiş tarihleri
+	Ters_Whois(IP) -> ASN -> Ters_Whois(ASN) -> Kuruma ait IP blokları
+
+IP Aralığı Tespti
+	ping, nslookup, dig
+	ASN
+	Ripe, RaDB
+	-h , '!g'
+	Robtex
+	Ters Sorgular
+		viewdns.info
+
+Subdomain
+	fierce
+		yarı-pasif?
+		zonetransfer
+	theHarvester
+	virustotal.com
+	dnsdumpster.com
+	subbrute
+	knock
+	sublist3r
+	...
+	SSL Certificate
+	   crt.sh
+	   google certificate transparency
+
+Arama Motorları
+	Google
+		Dork
+		    site:*.ankara.edu.tr
+		    intitle:"yönetim paneli" site:*.ankara.edu.tr
+		    inurl:"yonetim" site:*.ankara.edu.tr
+		    filetype:pdf docx doc exe txt sql
+		GHD
+		    https://www.exploit-db.com/google-hacking-database
+	Bing
+		ip
+	E-mail
+		e-mail pattern
+		theHarvester
+		dmitry
+		pastebin.com
+		haveibeenpwned.com
+		inteltechniques.com
+		LeakFinder
+	Shodan.io
+		hostname
+		country
+		os
+		net
+		kamerka (tool)
+	Censys.io
+	Archive (Unutulmuş veriler ve dizinler)
+	Netcraft
+	Domaintools
+		viewdns.info
+
+	Cloudflare
+		subdomain
+		securitytrails.com/dns-trails
+		crimeflare.com:82/cfs.html
+		viewdns.info
+
+Sızdırılmış Veriler
+	Bins
+		osinttechniques.com
+
+Metadata
+	Foca Pro
+	Metagoofil
+
+Çalışanlar & WildLife & Geliştiriciler
+	İş İlanları
+		Geliştiricilere Yönelik
+		IT Çalışanlarına Yönelik
+	Sosyal Medya Analizi
+		Twitter
+		Facebook
+		Linkedin
+		Instagram
+		kariyer.net
+	Sözleşmeler/İhaleler
+	Yetkili Kişiler
+	Uzak Bağlantı Noktaları
+	Forumlar
+	Ters Logo Araması
+		tineye.com
+		Google Image Search
+
+		
+
+ÖRN:
+    Hedef: Ankara Üniversitesi
+    Domian: ankara.edu.tr
+    IP Çözümleme : 80.251.50.153
+    Whois: Fiziksel adresi bilgisi iletişim mail bilgisi ns1 ns2 bilgisi
+        whois -h whois.radb.net [ip adresi]
+    IP blokları
+    ASN numarası  : bu numara üzerinden domainin sahip olduğu diğer ip bloklarını bulmak
+        whois -h whois.radb.net !gASN No
+    Ters whois sorgusu ile ASN vw ip aralıkları elde ediyoruz
+        viewdns.info : kaç domain adresi var
+    bing.com üzerinde ip: parametresi
+        ip:ip adresi ile sunucu üzerindeki bir ip adresine 1den fazla domain adı çözümlenmişse (virtual host) birinden zafiyet bulamadıysak bile diğerinden bulup sunucuya erişebiliriz. 
+    theharvester -parametreleri : o kurumla ilgili e-posta adreslerini google da buluyor.
+    dnsdumpster.com
+    securitytrails.com    GitHub : zen, h8mail
+        E-posta paternini bulmak için güzel siteler
+        
+Zafiyet Tespiti
+Zafiyet sömürüsü
+Bağlantıyı Kalıcı Kılma
+(İzleri Silme)
+Raporlama

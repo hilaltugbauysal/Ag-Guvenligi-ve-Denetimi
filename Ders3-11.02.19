@@ -1,0 +1,76 @@
+11.02.2019 PZT
+Aktif Bilgi Toplama
+	Scope
+		Internal
+		External
+		
+	External & Internal
+		nmap/zenmap(nmap'in grafiksel arayüzlü hali), nc, unicornscan, Angry IP Scanner, masscan, 
+		Canlı sistemlerin tespiti
+			nmap -sn 1.1.1.1/24
+			netdiscover
+			arp-scan
+		Port Scanning
+			Nmap --> Kali'de yüklü
+				nmap 1.2.3.4
+					port/state/service
+					linux dağıtımlarında /etc/services altında hangi portta hangi servis çalışıyor bilgisi
+				nmap 192.168.1.0/24 ip aralığı verilebilir
+				bir ip listesi oluşturulur -> liste.txt
+					nmap -iL liste.txt
+				spesifik bir ip aralığı
+					nmap 1.2.3.4-1.2.3.15
+				spesifik bir port/portlar taranacaksa
+					nmap -p80,22,11, 127.0.0.1
+					nmap -p- 127.0.0.1 tüm portları tarar. 65535
+					nmap --top-ports=50 127.0.0.1 --> en sık kullanılan 50 portu bul
+					less /usr/share/nmap/nmap-services -> nmap'in kendine ait bir veri dosyası ve buradaki yüzdelere göre portları tarayacak
+														  (hangi portun hangi sıklıkla kullanıldığı bilgisi)
+					
+			Port
+			TCP Flags
+				Three-way Handshake
+					nmap -sS 127.0.0.137 -p22(SYN taraması)
+						synproxy önlemi varsa tüm portları açık sanılır istemcinin
+						-sT -> TCP taraması için
+						-sU -> UDP
+						-sA -> ACK
+					nmap.org 
+		Banner Grabbing : Açık olan portta çalışan servisin ismini versiyonunu görebilmek için kullanılır.
+		Version Detection
+							nc 12.0.0.137 22 (netcat ile)
+							telnet 1.2.3.4 22 (telnet ile)
+							nmap -sV 1.2.3.4 -p22 (nmap ile)
+					
+		
+		Firewall Bypass
+					--script=firewall-pypass.nse
+					nmap -D -> Decoy Scan, -D 
+					
+					nmap --spoof-mac=IBM ip addr
+					nmap -p22 --mtu 8 (ve katlarına paketi parçalar 32ye kadar) 1.2.3.4
+		Script Engine
+					nmap -sT -sV 12.0.0.137 -script=all /--script=ftp-anon.nse (scriptin adı) -p21 
+		Aggresive Scan
+					nmap -A 1.2.3.4 (tüm taramaları bir anda kendisi yapıyor)
+				agresif tarama uzun sürer bir yandan bunu yapıp bir yandan spesifik port taraması yapılabilir.
+		OS
+					nmap -O 1.2.3.4 çekirdek sürümü bilgisi verir
+		Trick
+					nmap -sT -sV 1.2.3.4 -p- --script=all -vvv (verbose mode)
+					nmap -sT -sV 1.2.3.4 -n isim taramasını atlar hızlandırır taramayı
+					nmap -sT -sV 1.2.3.4 -Pn sistemin açık olduğunu varsayarak yap.
+					nmap -sn 1.2.3.4 --> canlı cihazları bul.
+										 sık kullanılan portları tara
+										 full port
+										 versiyon
+										 script
+										 
+				arp-scan --localnet --> internal networkte arp istekleri ile canlı cihazları keşfediyor.
+				netdiscover -r 1.2.3.4/24 -i eth0 (üzerinden tarama yapmak istediğim interface'i tanımlamak için)
+		Output
+				nmap -p22 -sT 1.2.3.4 -oA (tarama sürerken patlarsa bu rapor sayesinde kaldığı yerden devam ediyor) (.xml .nmap vs. uzantılı raporlar)
+				
+				nmap ---resume rapor.gnmap ya da .xml (kaldığı yerden o rapor sayesinde devam etsin)
+				screen : ssh bağlantısı koptuğunda oluşan virtual screenler sayesinde devam edebiliyor taramaya
+		
