@@ -41,19 +41,19 @@ Test Tipleri
     Scada Pentest : İnternetle bağı olmak zorunda olmadan sisteme erişmek.
     Wireless Pentest : Sinyallerin, frekansların düzgün çalışıp çalışılmadığına dair testler.
     Social Engineering : Kurum çalışanlarının bilgi güvenliği konusunda ne kadar bilinçli olduğuna dair yapılan testler.
-        orijinaline benzeyen sahte domainler ile çalışanlara mail göndermek, usb sokmak vs.
-    Load/Stress Test : Tahmin edilen beklenen load'ı test etmek.
+        orijinaline benzeyen sahte domainler ile çalışanlara mail göndermek, usb girişini sağlamak vs.
+    Load/Stress Test : Tahmin edilen, beklenen yoğunluğu test etmek.
     
     
-Metodoloji : Süreci gerçekleştirirken ki sıra, yöntem. Sızma testleri ekip işi olduğu için metodoloji çok daha önemlidir.
-    Bilgi Toplama : Aktif ya da    pasif şekilde ip domain uygulama çalışan e-mail fiziksel adres bilgilerini elde etmek
+Metodoloji : Süreci gerçekleştirirkenki sıra, yöntem. Sızma testleri ekip işi olduğu için metodoloji çok daha önemlidir.
+    Bilgi Toplama : Aktif ya da pasif bir şekilde ip domain uygulama çalışan e-mail fiziksel adres bilgilerini elde etmek.
     Zafiyet Tespiti
         Otomatize --> Nessus, Core Impact, OpenVAS
         Manuel --> Burp Suite, OWASP ZAP Proxy
     Zafiyet Sömürüsü
         Hazır Sömürü Kodu Kullanımı --> exploit-db.com
-        Vulnerability Research : Zero-day çıkarma çalışmaları
-        Yetki Yükseltme Saldırıları : Root yetkisine sahip olunca sistemde her şeye sahip olabiliyorsun
+        Vulnerability Research : Zero-day çıkartma çalışmaları.
+        Yetki Yükseltme Saldırıları : Root yetkisine sahip olunca sistemde her şeye sahip olabiliyorsun.
         
 Bağlantıyı Kalıcı Yapma ve Risk Tespiti
 
@@ -79,10 +79,7 @@ Raporlar bir süre sonra kalıcı olarak silinir.
 OSI
 
 İnternet standartı, pratikte uygulanmışlığı yok teoride.
-	1. 
-Application
-
-
+	7. Application
                     HTTP, SMTP
         6. Presentation
                     TLS, SSL
@@ -235,8 +232,7 @@ Metadata
 		tineye.com
 		Google Image Search
 
-		
-
+	------------------------------------------------------
 ÖRN:
     Hedef: Ankara Üniversitesi
     Domian: ankara.edu.tr
