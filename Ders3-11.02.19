@@ -57,7 +57,7 @@ Aktif Bilgi Toplama
 		OS
 					nmap -O 1.2.3.4 çekirdek sürümü bilgisi verir
 		Trick
-					nmap -sT -sV 1.2.3.4 -p- --script=all -vvv (verbose mode)
+					nmap -sT -sV 1.2.3.4 -p- --script=all -vv (verbose mode)
 					nmap -sT -sV 1.2.3.4 -n isim taramasını atlar hızlandırır taramayı
 					nmap -sT -sV 1.2.3.4 -Pn sistemin açık olduğunu varsayarak yap.
 					nmap -sn 1.2.3.4 --> canlı cihazları bul.
